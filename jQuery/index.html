@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <input id="target" type="text"/>
+  <button>取得</button>
+  <h2></h2>
+  
+  <script src="jquery.min.js"></script>
+  <script>
+    const url = 'https://b.hatena.ne.jp/entry/jsonlite/?url=';
+  
+    $('button').on('click', () => {
+      $.ajax({
+        url:url+$('#target').val(),
+        dataType:"jsonp",
+      }).done(data => {
+        if(data) {
+          $('h2').text(data.count+'個のはてなブックマークが登録されています');
+        } else {
+          $('h2').text('はてなブックマークに登録されていません')
+        }
+      });  
+    })
+  </script>
+</body>
+
+</html>

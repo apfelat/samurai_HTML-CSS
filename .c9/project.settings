@@ -29,7 +29,14 @@
     "run": {
         "configs": {
             "@inited": "true",
-            "json()": {}
+            "json()": {
+                "touch func.rb": {
+                    "command": "ruby func.rb",
+                    "name": "touch func.rb",
+                    "runner": "Ruby",
+                    "toolbar": true
+                }
+            }
         }
     },
     "welcome": {
